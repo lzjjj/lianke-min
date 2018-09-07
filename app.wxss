@@ -1,0 +1,13 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+   background-color: #000000;
+   position: fixed;
+   overflow-y:auto; 
+   overflow-x: hidden;
+   -webkit-overflow-scrolling: touch;
+
+} 

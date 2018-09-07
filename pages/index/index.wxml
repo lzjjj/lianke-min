@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{carouselPic}}">
+        <swiper-item>
+          <image src="{{item.picpath}}" class="slide-image" data-url="{{item.picpath}}" bindtap='showPreviewImg' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='title'>励志于打造全网主播，为有主播梦的你提供优质平台</view>
+  </view>
+  <view class='nav'>
+    <view class='nav_head'>
+     <view style='padding-right:9.7%;' bindtap='switchTab' class="{{isShowAbout?'unselect':'select'}}" data-id="0">【发现我们】</view>
+      <view  class="{{isShowAbout?'select':'unselect'}}" bindtap='switchTab' data-id="1">【关于联科】</view>
+     
+    </view>
+
+    <view class='about_us' wx:if="{{isShowAbout}}">
+
+      <view class='intro_title'>
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWAgMAAAC52oSoAAAADFBMVEUAAAAmGwC9jwCgeABOr2i0AAAAAnRSTlMAgJsrThgAAABQSURBVAjXLY6xDQAhDAPzxYstYBXmYiQjOgZhDqYAo0sRS7kkdkT88arUJ225f3takoYlq1cjaRlJ00gaRrrQ6EKEISsccM4zXmOELSGIdAD8yCs1kB+wEAAAAABJRU5ErkJggg=='
+          class='introdution_img'></image>
+        <text style='padding:0 0.91rem;'>关于我们</text>
+        <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWAgMAAAC52oSoAAAADFBMVEUAAAAmGwC9jwCgeABOr2i0AAAAAnRSTlMAgJsrThgAAABQSURBVAjXLY6xDQAhDAPzxYstYBXmYiQjOgZhDqYAo0sRS7kkdkT88arUJ225f3takoYlq1cjaRlJ00gaRrrQ6EKEISsccM4zXmOELSGIdAD8yCs1kB+wEAAAAABJRU5ErkJggg=='
+          class='introdution_img'></image>
+      </view>
+      <view class='abous_us_img'>
+        <image src='{{item.picpath}}' wx:for="{{aboutUsPic}}" data-url="{{item.picpath}}" bindtap='showPreviewImg'></image>
+      </view>
+      <!-- <view>联科团队</view>
+      <view class='team_number'>
+        <view> 姓名：周海鹏 </view>
+        <view> 职务：总经理</view>
+      </view>
+       <view class='team_number'>
+        <view> 姓名：于海洋 </view>
+        <view> 职务：副总经理</view>
+      </view>
+       <view class='team_number'>
+        <view> 姓名：曹斯文 </view>
+        <view> 职务：副总经理</view>
+      </view>
+      <view class='team_number'>
+        <view> 姓名：刘孝成 </view>
+        <view> 职务：摄像团队负责人</view>
+      </view> -->
+    </view>
+
+
+    <view class='find_us' wx:if="{{!isShowAbout}}">
+      <view class='introdution'>
+        <view class='intro_title'>
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWAgMAAAC52oSoAAAADFBMVEUAAAAmGwC9jwCgeABOr2i0AAAAAnRSTlMAgJsrThgAAABQSURBVAjXLY6xDQAhDAPzxYstYBXmYiQjOgZhDqYAo0sRS7kkdkT88arUJ225f3takoYlq1cjaRlJ00gaRrrQ6EKEISsccM4zXmOELSGIdAD8yCs1kB+wEAAAAABJRU5ErkJggg=='
+            class='introdution_img'></image>
+          <text style='padding:0 0.91rem;'>发现我们</text>
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWAgMAAAC52oSoAAAADFBMVEUAAAAmGwC9jwCgeABOr2i0AAAAAnRSTlMAgJsrThgAAABQSURBVAjXLY6xDQAhDAPzxYstYBXmYiQjOgZhDqYAo0sRS7kkdkT88arUJ225f3takoYlq1cjaRlJ00gaRrrQ6EKEISsccM4zXmOELSGIdAD8yCs1kB+wEAAAAABJRU5ErkJggg=='
+            class='introdution_img'></image>
+        </view>
+        <view class='intro_cont'>
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAYCAMAAAAxgAaOAAAAhFBMVEUAAAC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQC1iQCM+z9dAAAAK3RSTlMA9fhXxY7xLdvXc/vPwugLBuvle2dNKRmfXEYgCKaVbWI9Eg3Jt7WwlIg3Qrc/+wAAARZJREFUKM+t0dmOgzAMBVDbQCAECqWFUrrvy/3//xunMBoJNPM058WKrqLYDhE1mbCMcLai3tFAeMShpY9NDqTBSAXbkRcIsoJGFkBV+6tXYK11Gu9Kog6ADVUefstzPQB8JJrhd0tizNooivYJ7lHvAYRaWr1HzAfyaj5Rr8Z9QyoV1jQtSXW8vwzp0OXJCDE+a+kqOK1qe8POT1jsHdMckgTnvAKQvcrLpbgBcii258hB6O2bFvSMgnLGsJYrUdxaw2weL8vwJHsm8FyuTxUb3eu63lIcLBJr7TKm9846VIuz/yIbnmgQN03z6Syew66GjaY0MUMSk0r9xsbK+f+kwZ/vPoOxtflJHU9gSA9iWCaMZDr5FzccIeEEpg2GAAAAAElFTkSuQmCC'
+            style='width:0.9rem;height:0.75rem;'></image>
+          <text>{{companyInfo.companyname}}</text>
+        </view>
+        <view class='intro_cont'>
+          <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbAQMAAAC3GmYWAAAABlBMVEUAAAC1iQCMs6Y2AAAAAXRSTlMAQObYZgAAAFtJREFUCNdNzLENwCAMRNGLUqRkBEbxaDBBVmAUPIo3iNJRcbGRkNK84qR/ODiAxAlkskJIRSENHIGKU7Njj2EuuDDgjPaKNr0EshbnFn9pgbRN73vT4hgd/vkAjV5CfV8WRkQAAAAASUVORK5CYII="
+            style='width:0.84rem;height:0.84rem;'></image>
+          <text>{{companyInfo.companyphone}}</text>
+        </view>
+        <view class='intro_cont' style='padding-bottom:2.72rem;'>
+          <image src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAZAQMAAADkG/euAAAABlBMVEUAAAC1iQCMs6Y2AAAAAXRSTlMAQObYZgAAAEpJREFUCNddzLERgDAMQ9HPpXDJCIzCaLABKzFKRkjpIhdhnC7Fa3SSMMGum1M1XWrocUZx+raaucyzF3Jz6P0/AtiA0iGq0ELlA1X1K7/rprbyAAAAAElFTkSuQmCC'
+            style='width:0.65rem;height:0.78rem;'></image>
+          <text>{{companyInfo.companyloc}}</text>
+        </view>
+      </view>
+
+      <view class='descrition'>
+        联科传媒（哈尔滨联科文化传媒有限公司）是全国顶 级网红培训养成经纪机构。公司在全国拥有近3000+ 合作签约艺人，拥有多家分公司，员工近300人。目 前已然成为哈尔滨地区最大网红培训养成最大的经纪 公司。公司设立在哈尔滨江北学院路以及哈西万达写 字楼。公司业务涵盖网络在线演艺、网络大电影、网 络综艺节目制作发行。电子商务等多项业务。本公司 长期与爱奇艺、腾讯、优酷等主流媒体合作。也许你 就是下一个网络红人！
+      </view>
+      <view class='img_cont'>
+        <image src='{{item.picpath}}' wx:for="{{findUsPic}}" data-url="{{item.picpath}}" bindtap='showPreviewImg'></image>
+      </view>
+    </view>
+
+  </view>
+</view>

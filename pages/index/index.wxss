@@ -1,0 +1,122 @@
+/**index.wxss**/
+
+.slide-image {
+   width: 100%;
+   
+}
+swiper{
+  height: 15rem; 
+}
+
+.swiper {
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  padding-left: 1.7%;
+  font-size: 0.8rem;
+  color: #f9f9f9;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(106, 57, 6, 0.5);
+  height: 1.15rem;
+  line-height: 1.15rem;
+  bottom: 0;
+  /* opacity: 0.5; */
+}
+
+.nav {
+  width: 100%;
+  font-size: 1rem;
+}
+.select{
+ color: #bd8f00;
+}
+.unselect{
+ color: white;
+}
+.nav_head {
+  margin-top: 0.5rem;
+  display: flex;
+   align-items: center;
+  justify-content: center; 
+}
+.introdution{
+   box-sizing: border-box;
+  color: #bd8f00;
+  text-align: center;
+  margin:0.6rem;
+  background-color: #181200;
+}
+.introdution_img{
+  width: 0.68rem;
+  height: 0.68rem;
+  vertical-align: middle;
+  margin-top: 1.2%;
+  
+}
+.intro_title{
+  color: #bd8f00;
+   padding:1.125rem 0 1.96rem; 
+  display:flex;
+  font-size:0.81rem;
+  justify-content: center;
+  align-items: center;
+}
+.intro_cont{
+  width:100%;
+   display:flex;
+   font-size:0.81rem;
+   align-items: center;  
+   padding:0 0 0.65rem 28.8%;
+}
+
+.intro_cont>image{
+  margin-right: 0.78rem;
+}
+.descrition{
+  font-size:0.81rem;
+  box-sizing: border-box;
+  color: #bd8f00;
+  margin: 0 1.43rem ;
+  padding: 0.5rem 0.1rem 0.96rem 0.56rem;
+  background-color: #181200;
+}
+.img_cont{
+   margin: 1.09rem 3.4% 1.625rem 8%; 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: center */
+}
+.img_cont>image{
+  width:44%;
+    /* height: 12rem;   */
+   margin: 0 4.6% 0.5rem 0; 
+   border-radius: 0.1rem;
+   border: 1px #bd8f00 solid;
+}
+.about_us{
+  color:  #bd8f00;
+  text-align: center;
+  margin-bottom: 0.49rem;
+  -webkit-overflow-scrolling: touch;
+}
+.abous_us_img{
+  margin-top: -1.96rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.abous_us_img>image{
+  /* width: 90%; */
+  /* height: 15rem; */
+   margin-top: 0.8rem  ; 
+   border-radius: 0.1rem;
+   border: 1px #bd8f00 solid;
+}
+.team_number{
+   text-align: left;
+   padding:1.34rem 0 0 35% ;
+
+}
